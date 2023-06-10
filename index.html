@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB3PR2Y1TQ"></script> -->
+    <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XB3PR2Y1TQ');
+    </script> -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MVDiffusion: Enabling Holistic Multi-view Image Generation with Correspondence-Aware Diffusion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta property="og:site_name" content="MVDiffusion" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="MVDiffusion: Enabling Holistic Multi-view Image Generation with Correspondence-Aware Diffusion" />
+    <meta property="og:description" content="MVDiffusion, 2023." />
+    <meta property="og:url" content="https://mvdiffusion.github.io/" />
+    <meta property="og:image" content="https://dreamfusion3d.github.io/assets/images/dreamfusion_samples.png" />
+
+    <meta property="article:publisher" content="https://dreamfusion3d.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MVDiffusion: " />
+    <meta name="twitter:description" content="XXXXX." />
+    <meta name="twitter:url" content="https://mvdiffusion.github.io/" />
+    <!-- <meta name="twitter:image" content="https://dreamfusion3d.github.io/assets/images/dreamfusion_samples.png" /> -->
+    <!-- <meta name="twitter:site" content="" /> -->
+
+    <script src="assets/js/video_comparison.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <!-- <div class="banner"> -->
+      <!-- <video class="video lazy"
+          poster="https://dreamfusion-cdn.ajayj.com/sept28/banner_1x6_customhue_A.jpg"
+          autoplay loop playsinline muted>
+        <source data-src="https://dreamfusion-cdn.ajayj.com/sept28/banner_1x6_customhue_A.mp4" type="video/mp4"></source>
+      </video> -->
+    <!-- </div> -->
+    <div class="highlight-clean" style="padding-bottom: 10px;">
+        <div class="container" style="max-width: 1000px;">
+            <h1 class="text-center"><b>MVDiffusion</b>: Enabling Holistic Multi-view Image Generation with Correspondence-Aware Diffusion </h1>
+        </div>
+        <div class="container" style="max-width: 980px;">
+            <div class="row authors">
+                <div class="col">
+                    <h5 class="text-center"><a class="text-center" href="">Shitao Tang<sup>*1</sup> </a></h5>
+                </div>
+                <div class="col">
+                    <h5 class="text-center"><a href="">Fuyang Zhang<sup>*1</sup></a></h5>
+                </div>
+                <div class="col">
+                    <h5 class="text-center"><a class="text-center" href="">Jiacheng Chen<sup>1</sup></a></h5>
+                </div>
+                <div class="col">
+                    <h5 class="text-center"><a class="text-center" href="">Peng Wang<sup>2</sup></a></h5>
+                </div>
+                <div class="col">
+                    <h5 class="text-center"><a class="text-center" href="">Yasutaka Furukawa<sup>1</sup></a></h5>
+                </div>
+            </div>
+            <div class="row affiliations">
+                <div class="col">
+                    <h6 class="text-center"><a class="text-center"><sup>1</sup>Simon Fraser University</a></h6>
+                </div>
+                <div class="col">
+                    <h6 class="text-center"><a class="text-center"><sup>2</sup>Bytedance</a></h6>
+                </div>
+            </div>
+        </div>
+        <div class="buttons" style="margin-bottom: 8px;">
+            <a class="btn btn-light" role="button" href="https://arxiv.org/abs/2209.14988">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
+                </svg>Paper
+            </a>
+            <a class="btn btn-light disabled border border-dark" aria-disabled="true" role="button" href="#">
+                <svg style="visibility:hidden;width:0px;height:24px;margin-left:-12px;margin-right:12px" width="0px" height="24px" viewBox="0 0 375 531">
+                    <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "/>
+                </svg>
+                Project
+            </a>
+            <a class="btn btn-light" role="button" href="/gallery.html">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
+                    <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "/>
+                </svg>
+                Gallery
+            </a>
+        </div>
+    </div>
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2><strong>Abstract</strong></h2>
+                <p>
+                    This paper introduces <em>MVDiffusion</em>, a simple yet effective multi-view image generation method for scenarios where pixel-to-pixel correspondences are available, such as perspective crops from panorama or multi-view images given depth/pose. Unlike prior models that rely on iterative image warping and inpainting, MVDiffusion concurrently generates all images with a global awareness, encompassing high resolution and rich content, effectively addressing the error accumulation prevalent in preceding models. MVDiffusion specifically incorporates a correspondence-aware attention mechanism, enabling effective cross-view interaction. This mechanism underpins three pivotal modules: 1) a generation module that produces low-resolution images while maintaining global correspondence, 2) an interpolation module that densifies spatial coverage between images, and 3) a super-resolution module that upscales into high-resolution outputs. Through comprehensive experimentation, MVDiffusion consistently outperforms state-of-the-art models across various metrics, marking a significant advancement in the field of multi-view image synthesis.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 768px;">
+        <div class="row captioned_videos">
+            <div class="col-md-12">
+                <!-- Large format devices -->
+                <video class="video lazy d-none d-xs-none d-sm-block" autoplay loop playsinline muted poster="https://dreamfusion-cdn.ajayj.com/sept28/wipe_opposite_6x4_smoothstep.jpg">
+                    <source data-src="https://dreamfusion-cdn.ajayj.com/sept28/wipe_opposite_6x4_smoothstep.mp4" type="video/mp4"></source>
+                </video>
+                <!-- Small format devices -->
+                <video class="video lazy d-xs-block d-sm-none" autoplay loop playsinline muted poster="https://dreamfusion-cdn.ajayj.com/sept28/shaded_3x3_smoothstep.jpg">
+                    <source data-src="https://dreamfusion-cdn.ajayj.com/sept28/shaded_3x3_smoothstep.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Given a caption, DreamFusion generates relightable 3D objects with high-fidelity appearance, depth, and normals. Objects are represented as a Neural Radiance Field and leverage a pretrained text-to-image diffusion prior such as Imagen.</h6>
+            </div>
+        </div>
+    </div>
+    
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Generate 3D from text yourself!</h2>
+            </div>
+        </div>
+        <div class="row compositional captioned_videos">
+            <div class="col-sm-8 text">
+                <p class="selectable left" id="compositional_tags_depth_0"></p>
+            </div>
+            <div class="col-sm-4 my-auto">
+                <div class="video-compare-container">
+                    <video id="compositionalVideo" class="video" autoplay loop playsinline muted>
+                        <div class="screen" id="compositionalScreen"></div>
+                        <source id="compositionalVideoSrc" src="assets/videos/scene0733_00_0.mp4" type="video/mp4">
+                    </video>
+                    <!-- <video onplay="resizeAndPlay(this)" style="height: 0px;" id="compositionalVideo" class="video lazy" autoplay loop playsinline muted>
+                        <source id="compositionalVideoSrc" data-src="https://dreamfusion-cdn.ajayj.com/journey_sept28/full/a_DSLR_photo_of_a_squirrel___rgbdn_hq_15000.mp4" type="video/mp4">
+                    </video> -->
+                    <!-- <canvas height="752" class="videoMerge" id="compositionalVideoMerge" width="1002"></canvas> -->
+                </div>
+                <!-- <h6 class="caption" id="compositionalCaption">a DSLR photo of a squirrel</h6> -->
+            </div>
+        </div>
+    </div>
+    
+    <hr class="divider" />
+    <div class="container meshes" id="meshContainer" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Example generated texture meshes</h2>
+                <p>Our generated NeRF models can be exported to meshes using the marching cubes algorithm for easy integration into 3D renderers or modeling software.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2> Panorama visualization </h2>
+            </div>
+        </div>
+
+        <div class="slideshow-container">
+            <div class="mySlides">
+            <!--  <div class="numbertext">1 / 3</div>-->
+              <div class="pano_text">A kitchen counter with a vase, marble and wooden countertops, stainless steel refrigerator/oven, and a kitchen with stove, over, and sink.</div>
+              <div align="center">
+              <a href="pics/panorama/sT4fr6TAbpF_88a0c5bfe697410199d1846d7ecea7d1.gif"> <img src="pics/panorama/sT4fr6TAbpF_88a0c5bfe697410199d1846d7ecea7d1.gif" style="width:60%"></a>
+            <!--  <div class="text">Caption Text</div>-->
+              </div>
+            </div>
+            <div class="mySlides">
+            <!--  <div class="numbertext">2 / 3</div>-->
+              <div class="pano_text">A dining room with a chandelier, a table and chairs. A kitchen with a marble counter top next to a dining room table with wooden ceiling. </div>
+              <div align="center">
+              <a href="pics/panorama/uNb9QFRL6hY_95f9ea7f0eee4295bd19e7bd32104031.gif"> <img src="pics/panorama/uNb9QFRL6hY_95f9ea7f0eee4295bd19e7bd32104031.gif" style="width:60%"></a>
+            <!--  <div class="text">Caption Two</div>-->
+              </div>
+            </div>
+            <div class="mySlides">
+                <!--  <div class="numbertext">3 / 3</div>-->
+              <div class="pano_text">A bedroom filled with furniture and a flat screen tv. A bedroom with a large bed and a potted plant. A bedroom with a large bed and a piano.</div>
+              <div align="center">
+                  <a href="pics/panorama/uNb9QFRL6hY_1221600fdd514346977b36764198ab8c.gif"> <img src="pics/panorama/uNb9QFRL6hY_1221600fdd514346977b36764198ab8c.gif" style="width:60%"></a>
+                <!--  <div class="text">Caption Three</div>-->
+              </div>
+            </div>
+            <div class="mySlides">
+                <!--  <div class="numbertext">3 / 3</div>-->
+              <div class="pano_text">A kitchen with white cabinets and stainless appliances. A kitchen with windows and a refrigerator. An oven and microwave in a kitchen.</div>
+              <div align="center">
+                  <a href="pics/panorama/uNb9QFRL6hY_fcaf3b3dc15748f4b64f237de2c972ea.gif"> <img src="pics/panorama/uNb9QFRL6hY_fcaf3b3dc15748f4b64f237de2c972ea.gif" style="width:60%"></a>
+                <!--  <div class="text">Caption Three</div>-->
+                </div>
+            </div>
+            
+            <p class="prev" onclick="plusSlides(-1)">❮</p>
+            <p class="next" onclick="plusSlides(1)">❯</p>
+            
+        </div>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+    <br>
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Citation</h2>
+                <code>
+                    @article{poole2022dreamfusion,<br>
+                    &nbsp; author = {Poole, Ben and Jain, Ajay and Barron, Jonathan T. and Mildenhall, Ben},<br>
+                    &nbsp; title  = {DreamFusion: Text-to-3D using 2D Diffusion},<br>
+                    &nbsp; journal = {arXiv},<br>
+                    &nbsp; year   = {2022},<br>
+                }</code>
+            </div>
+        </div>
+    </div>
+    <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
+    <script src="/assets/js/yall.js"></script>
+    <script>
+        yall(
+            {
+                observeChanges: true
+            }
+        );
+    </script>
+    <script src="/assets/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.fd002feec.js"></script> -->
+    <!-- Import the component -->
+
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+</body>
+
+</html>
