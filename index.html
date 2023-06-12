@@ -129,7 +129,7 @@
             </div>
         </div>
     </div>
-    
+
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
         <div class="row">
@@ -156,7 +156,53 @@
             </div>
         </div>
     </div>
-    
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>Example generated objects</h2>
+                <p>DreamFusion generates objects and scenes from diverse captions. <a href="/gallery.html">Search through hundreds of generated assets in our full gallery.</a></p>
+            </div>
+            <div class="col-sm-4 my-auto">
+                <a href="/gallery.html" class="btn btn-primary btn-lg btn-search"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewbox="0 0 600 550">
+                    <path fill="none" stroke="#fff" stroke-width="36" stroke-linecap="round" d="m280,278a153,153 0 1,0-2,2l170,170m-91-117 110,110-26,26-110-110"/>
+                    </svg>Search assets
+                </a>
+            </div>
+        </div>
+        <div class="row captioned_videos" id="randomVideos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="https://dreamfusion-cdn.ajayj.com/gallery/a_teddy_bear_pushing_a_shopping_cart_full_of_fruits_and_vegetables_rgbdn_hq_15000.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex1Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A teddy bear pushing a shopping cart full of fruits and vegetables.</h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="https://dreamfusion-cdn.ajayj.com/gallery/a_sliced_loaf_of_fresh_bread_rgbdn_hq_15000.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex2Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">a sliced loaf of fresh bread.</h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex3" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="https://dreamfusion-cdn.ajayj.com/gallery/a_zoomed_out_DSLR_photo_of_Sydney_opera_house,_aerial_view_rgbdn_hq_15000.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex3Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">a zoomed out DSLR photo of Sydney opera house, aerial view.</h6>
+            </div>
+        </div>
+    </div>
+
+
     <hr class="divider" />
     <div class="container meshes" id="meshContainer" style="max-width: 768px;">
         <div class="row">
