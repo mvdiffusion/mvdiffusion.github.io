@@ -133,46 +133,75 @@
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
         <div class="row">
+            <div class="col-md-12">
+                <h2>Generate 3D from text yourself!</h2>
+            </div>
+        </div>
+        <div class="row compositional captioned_videos">
+            <div class="col-sm-8 text">
+                <p class="selectable left" id="compositional_tags_depth_0"></p>
+            </div>
+            <div class="col-sm-4 my-auto">
+                <div class="video-compare-container">
+                    <video id="compositionalVideo" class="video" autoplay loop playsinline muted>
+                        <div class="screen" id="compositionalScreen"></div>
+                        <source id="compositionalVideoSrc" src="assets/videos/scene0733_00_0.mp4" type="video/mp4">
+                    </video>
+                    <!-- <video onplay="resizeAndPlay(this)" style="height: 0px;" id="compositionalVideo" class="video lazy" autoplay loop playsinline muted>
+                        <source id="compositionalVideoSrc" data-src="https://dreamfusion-cdn.ajayj.com/journey_sept28/full/a_DSLR_photo_of_a_squirrel___rgbdn_hq_15000.mp4" type="video/mp4">
+                    </video> -->
+                    <!-- <canvas height="752" class="videoMerge" id="compositionalVideoMerge" width="1002"></canvas> -->
+                </div>
+                <!-- <h6 class="caption" id="compositionalCaption">a DSLR photo of a squirrel</h6> -->
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
             <div class="col-sm-12">
                 <h2>Examples of multi-view depth-to-image generation</h2>
                 <p>Given a raw mesh, MVDiffusion ... (A brief introduction of this task)</p>
             </div>
         </div>
         <div class="row captioned_videos meshes" id="randomVideos">
-            <!-- <div class="col-4">
-                <div class="video-compare-container" style="width: 100%">
-                    <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-                        <source data-src="https://dw.convertfiles.com/files/0677904001686575593/scene0737_00_0.mp4" type="video/mp4"></source>
-                    </video>
-                    <canvas height="752" class="videoMerge" id="ex1Merge" width="1002"></canvas>
-                </div>
-                <h6 class="caption">A teddy bear pushing a shopping cart full of fruits and vegetables.</h6>
-            </div> -->
-            <!-- <div class="col-4">
-                <div class="video-compare-container" style="width: 100%">
-                    <video class="video lazy" id="ex2" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-                        <source data-src="https://dreamfusion-cdn.ajayj.com/gallery/a_sliced_loaf_of_fresh_bread_rgbdn_hq_15000.mp4" type="video/mp4"></source>
-                    </video>
-                    <canvas height="752" class="videoMerge" id="ex2Merge" width="1002"></canvas>
-                </div>
-                <h6 class="caption">a sliced loaf of fresh bread.</h6>
-            </div> -->
             <div class="col-6">
                 <div class="video-compare-container" style="width: 100%">
                     <video class="video lazy" id="ex3" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-                        <source data-src="https://dreamfusion-cdn.ajayj.com/gallery/a_zoomed_out_DSLR_photo_of_Sydney_opera_house,_aerial_view_rgbdn_hq_15000.mp4" type="video/mp4"></source>
+                        <source data-src="https://www.sfu.ca/~fuyangz/mvdiffusion/depth_video/scene0760_00_0.mp4" type="video/mp4"></source>
                     </video>
                     <canvas height="752" class="videoMerge" id="ex3Merge" width="1002"></canvas>
                 </div>
-                <h6 class="caption">a zoomed out DSLR photo of Sydney opera house, aerial view.</h6>
             </div>
             <div class="col-md-6 col-sm-6 my-auto">
-                <model-viewer ar="true" ar-modes="webxr scene-viewer quick-look" loading="lazy" reveal="manual" style="height: 300px; width: 100%;" camera-controls="true" touch-action="pan-y" shadow-intensity="1" exposure="1" src="https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0760_00_0.glb" poster="/assets/meshes2/scene0760_00_0.png" environment-image="https://modelviewer.dev/shared-assets/environments/spruit_sunrise_1k_HDR.hdr" id="mesh-scene0760_00_0" ar-status="not-presenting">
+                <model-viewer ar="true" ar-modes="webxr scene-viewer quick-look" loading="lazy" reveal="manual" 
+							  style="height: 300px; width: 100%;" camera-controls="true" touch-action="pan-y" 
+							  shadow-intensity="1" exposure="1" src="https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0760_00_0.glb" 
+							  poster="/assets/meshes2/scene0760_00_0.png" id="mesh-scene0760_00_0" ar-status="not-presenting">
                 </model-viewer>
                 <div class="controls">
                     <button class="btn btn-primary loads-model" data-controls="mesh-scene0760_00_0" data-action="load">Load 3D model</button>
                 </div>
-                <p class="caption" title="">The fused textured mesh</p>
+            </div>
+			
+			<div class="col-6">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex4" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="https://www.sfu.ca/~fuyangz/mvdiffusion/depth_video/scene0733_00_0.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex4Merge" width="1002"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 my-auto">
+                <model-viewer ar="true" ar-modes="webxr scene-viewer quick-look" loading="lazy" reveal="manual" 
+							  style="height: 300px; width: 100%;" camera-controls="true" touch-action="pan-y" 
+							  shadow-intensity="1" exposure="1" src="https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0733_00_0.glb" 
+							  poster="/assets/meshes2/scene0733_00_0.png" id="mesh-scene0733_00_0" ar-status="not-presenting">
+                </model-viewer>
+                <div class="controls">
+                    <button class="btn btn-primary loads-model" data-controls="mesh-scene0733_00_0" data-action="load">Load 3D model</button>
+                </div>
             </div>
         </div>
     </div>
