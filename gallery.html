@@ -1,71 +1,65 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html>
 
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB3PR2Y1TQ"></script>
+  <!--script async src="https://www.googletagmanager.com/gtag/js?id=G-XB3PR2Y1TQ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-XB3PR2Y1TQ');
-  </script>
+  </script> -->
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>DreamFusion: Text-to-3D using 2D Diffusion</title>
+  <title>MVDiffusion | Gallery</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/assets/css/Highlight-Clean.css">
-  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/assets/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="/assets/css/styles.css">
 
-  <title>DreamFusion: Text-to-3D using 2D Diffusion | Gallery</title>
-
   <link rel="manifest" href="/site.webmanifest">
-<style>
-.row {
-  max-width:960px !important;
-}
-</style>
+
 
   <script>
   window.console = window.console || function(t) {};
   </script>
 </head>
 
-<body translate="no">
-  <div class="banner">
-      <video class="video lazy"
-          poster="https://dreamfusion-cdn.ajayj.com/sept28/banner_1x6_customhue_A.jpg"
-          autoplay loop playsinline muted>
-        <source data-src="https://dreamfusion-cdn.ajayj.com/sept28/banner_1x6_customhue_A.mp4" type="video/mp4"></source>
-      </video>
-  </div>
+<body>
   <div class="highlight-clean" style="padding-bottom: 10px;">
-    <div class="container" style="max-width: 768px;">
-        <h1 class="text-center"><b>DreamFusion</b>: Text-to-3D using 2D Diffusion</h1>
+    <div class="container" style="max-width: 1000px;">
+        <h1 class="text-center"><b>MVDiffusion</b>: Enabling Holistic Multi-view Image Generation with Correspondence-Aware Diffusion</h1>
     </div>
-    <div class="container" style="max-width: 768px;">
+    <div class="container" style="max-width: 980px;">
         <div class="row authors">
-            <div class="col-sm-3">
-                <h5 class="text-center"><a class="text-center" href="https://cs.stanford.edu/~poole/">Ben Poole</a></h5>
-                <h6 class="text-center">Google Research</h6>
-            </div>
-            <div class="col-sm-3">
-                <h5 class="text-center"><a href="https://ajayj.com/">Ajay Jain</a></h5>
-                <h6 class="text-center">UC Berkeley</h6>
-            </div>
-            <div class="col-sm-3">
-                <h5 class="text-center"><a class="text-center" href="https://jonbarron.info/">Jonathan T. Barron</a></h5>
-                <h6 class="text-center">Google Research</h6>
-            </div>
-            <div class="col-sm-3">
-                <h5 class="text-center"><a class="text-center" href="https://bmild.github.io/">Ben Mildenhall</a></h5>
-                <h6 class="text-center">Google Research</h6>
-            </div>
+          <div class="col">
+              <h5 class="text-center"><a class="text-center" href="https://tangshitao.github.io/">Shitao Tang<sup>*1</sup> </a></h5>
+          </div>
+          <div class="col">
+              <h5 class="text-center"><a href="https://zhangfuyang.github.io/">Fuyang Zhang<sup>*1</sup></a></h5>
+          </div>
+          <div class="col">
+              <h5 class="text-center"><a class="text-center" href="https://jcchen.me/">Jiacheng Chen<sup>1</sup></a></h5>
+          </div>
+          <div class="col">
+              <h5 class="text-center"><a class="text-center" href="https://pengwangucla.github.io/peng-wang.github.io/">Peng Wang<sup>2</sup></a></h5>
+          </div>
+          <div class="col">
+              <h5 class="text-center"><a class="text-center" href="https://www.cs.sfu.ca/~furukawa/">Yasutaka Furukawa<sup>1</sup></a></h5>
+          </div>
         </div>
+        <div class="row affiliations">
+                <div class="col">
+                    <h6 class="text-center"><a class="text-center"><sup>1</sup>Simon Fraser University</a></h6>
+                </div>
+                <div class="col">
+                    <h6 class="text-center"><a class="text-center"><sup>2</sup>Bytedance</a></h6>
+                </div>
+            </div>
         <div class="buttons" style="margin-bottom: 8px;">
             <a class="btn btn-light" role="button" href="https://arxiv.org/abs/2209.14988">
                 <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
@@ -83,6 +77,10 @@
                     <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "/>
                 </svg>
                 Gallery
+            </a>
+            <a class="btn btn-light" role="button" href="https://mvdiffusion.github.io/">
+                <img style="width:24px;height:24px;margin-left:-1px;margin-right:8px" width="24px" height="24px" viewBox="0 0 375 531" src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face Logo">
+                Demo
             </a>
         </div>
     </div>
