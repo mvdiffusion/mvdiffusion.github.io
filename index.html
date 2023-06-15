@@ -132,67 +132,6 @@
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
         <div class="row">
-            <div class="col-sm-12">
-                <h2>Examples of multi-view depth-to-image generation</h2>
-                <p>Given a sequence of depth maps, MVDiffusion ... (A brief introduction of MVDiffusion in this task)</p>
-            </div>
-        </div>
-        <div class="row captioned_videos meshes" id="randomVideos">
-            <div class="col-6">
-                <div class="video-compare-container" style="width: 100%">
-                    <video class="video lazy" id="ex3" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-                        <source data-src="https://www.sfu.ca/~fuyangz/mvdiffusion/depth_video/scene0760_00_0.mp4" type="video/mp4"></source>
-                    </video>
-                    <canvas height="752" class="videoMerge" id="ex3Merge" width="1002"></canvas>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6 my-auto">
-                <model-viewer ar="true" ar-modes="webxr scene-viewer quick-look" loading="lazy" reveal="manual" 
-							  style="height: 280px; width: 100%;" camera-controls="true" touch-action="pan-y" 
-							  shadow-intensity="1" exposure="1" src="https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0760_00_0.glb" 
-							  poster="/assets/images/test.png" id="mesh-scene0760_00_0" ar-status="not-presenting">
-                </model-viewer>
-            </div>
-            <div class="controls">
-                <button class="btn btn-primary loads-model" data-controls="mesh-scene0760_00_0" data-action="load">Load 3D model</button>
-            </div>
-        </div>
-        <div class="row captioned_videos meshes" id="randomVideos-2">
-			<div class="col-6">
-                <div class="video-compare-container" style="width: 100%">
-                    <video class="video lazy" id="ex4" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-                        <source data-src="https://www.sfu.ca/~fuyangz/mvdiffusion/depth_video/scene0733_00_0.mp4" type="video/mp4"></source>
-                    </video>
-                    <canvas height="752" class="videoMerge" id="ex4Merge" width="1002"></canvas>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6 my-auto">
-                <model-viewer ar="true" ar-modes="webxr scene-viewer quick-look" loading="lazy" reveal="manual" 
-							  style="height: 280px; width: 100%;" camera-controls="true" touch-action="pan-y" 
-							  shadow-intensity="1" exposure="1" src="https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0733_00_0.glb" 
-							  poster="/assets/meshes2/scene0733_00_0.png" id="mesh-scene0733_00_0" ar-status="not-presenting">
-                </model-viewer>
-            </div>
-            <div class="controls">
-                    <button class="btn btn-primary loads-model" data-controls="mesh-scene0733_00_0" data-action="load">Load 3D model</button>
-            </div>
-        </div>
-    </div>
-
-
-    <hr class="divider" />
-    <div class="container meshes" id="meshContainer" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Example generated texture meshes</h2>
-                <p>Our generated NeRF models can be exported to meshes using the marching cubes algorithm for easy integration into 3D renderers or modeling software.</p>
-            </div>
-        </div>
-    </div>
-
-    <hr class="divider" />
-    <div class="container" style="max-width: 768px;">
-        <div class="row">
             <div class="col-md-12">
                 <h2> Panorama visualization </h2>
             </div>
@@ -238,7 +177,6 @@
         </div>
     </div>
     <br>
-
     <div style="text-align:center">
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
@@ -246,6 +184,84 @@
       <span class="dot" onclick="currentSlide(4)"></span>
     </div>
     <br>
+
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Examples of multi-view depth-to-image generation</h2>
+                <p>Given a sequence of depth maps, MVDiffusion ... (A brief introduction of MVDiffusion in this task)</p>
+            </div>
+        </div>
+        <div class="row captioned_videos meshes" id="randomVideos">
+            <div class="col-6">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex3" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="https://www.sfu.ca/~fuyangz/mvdiffusion/depth_video/scene0760_00_0.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex3Merge" width="1002"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 my-auto">
+                <model-viewer ar="true" ar-modes="webxr scene-viewer quick-look" loading="lazy" reveal="manual" 
+							  style="height: 276px; width: 100%;" camera-controls="true" touch-action="pan-y" 
+							  shadow-intensity="1" exposure="1" src="https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0760_00_0.glb" 
+							  poster="/assets/meshes/scene0760_00_0.png" id="mesh-scene0760_00_0" ar-status="not-presenting">
+                </model-viewer>
+            </div>
+            <div class="controls">
+                <button class="btn btn-primary loads-model" data-controls="mesh-scene0760_00_0" data-action="load">Load 3D model</button>
+            </div>
+        </div>
+        <div class="row captioned_videos meshes" id="randomVideos-2">
+			<div class="col-6">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex4" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="https://www.sfu.ca/~fuyangz/mvdiffusion/depth_video/scene0733_00_0.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex4Merge" width="1002"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 my-auto">
+                <model-viewer ar="true" ar-modes="webxr scene-viewer quick-look" loading="lazy" reveal="manual" 
+							  style="height: 276px; width: 100%;" camera-controls="true" touch-action="pan-y" 
+							  shadow-intensity="1" exposure="1" src="https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0733_00_0.glb" 
+							  poster="/assets/meshes2/scene0733_00_0.png" id="mesh-scene0733_00_0" ar-status="not-presenting">
+                </model-viewer>
+            </div>
+            <div class="controls">
+                    <button class="btn btn-primary loads-model" data-controls="mesh-scene0733_00_0" data-action="load">Load 3D model</button>
+            </div>
+        </div>
+    </div>
+
+
+    <hr class="divider" />
+    <div class="container meshes" id="meshContainer" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Example generated texture meshes</h2>
+                <p>Our generated NeRF models can be exported to meshes using the marching cubes algorithm for easy integration into 3D renderers or modeling software.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2><strong>How does MVDiffusion work?</strong></h2>
+                <p>
+                    Pipeline figure and videos here
+                </p>
+            </div>
+        </div>
+    </div>
+
 
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
