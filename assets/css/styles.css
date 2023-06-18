@@ -789,6 +789,14 @@ model-viewer .controls {
     font-size: 12px;
     text-align: center;
 }
+
+.pano_button {
+    color: #1772d0;
+    padding: 0;
+    border: none;
+    background: none;
+    text-decoration: none;
+}
   
 /* Hide the images by default */
 .mySlides {
