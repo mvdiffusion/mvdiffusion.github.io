@@ -8,7 +8,7 @@
         loading: "lazy",
         reveal: "manual",
         // crossorigin: "anonymous",
-        style: "height: 300px; width: 100%;",
+        style: "height: 180px; width: 100%;",
         "camera-controls": true,
         "touch-action": "pan-y",
         "shadow-intensity": "1",
@@ -22,33 +22,9 @@
             caption: "",
             shortCaption: "",
         },
-        scene0760_00_0: {
-            src: "https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0760_00_0.glb",
-            poster: "/assets/meshes2/scene0760_00_0.png",
-            caption: "",
-            shortCaption: "",
-        },
-        scene0733_00_0: {
-            src: "https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0733_00_0.glb",
-            poster: "/assets/meshes2/scene0733_00_0.png",
-            caption: "",
-            shortCaption: "",
-        },
-        scene0749_00_0: {
-            src: "https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0749_00_0.glb",
-            poster: "/assets/meshes2/scene0749_00_0.png",
-            caption: "",
-            shortCaption: "",
-        },
         scene0734_00_0: {
             src: "https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0734_00_0.glb",
             poster: "/assets/meshes2/scene0734_00_0.png",
-            caption: "",
-            shortCaption: "",
-        },
-        scene0741_00_0: {
-            src: "https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0741_00_0.glb",
-            poster: "/assets/meshes2/scene0741_00_0.png",
             caption: "",
             shortCaption: "",
         },
@@ -67,58 +43,92 @@
     };
 
     let meshRows = [
-        ['scene0724_00_0', 'scene0760_00_0'],
-        ['scene0733_00_0', 'scene0749_00_0'],
-        ['scene0734_00_0', 'scene0741_00_0'],
-        ['scene0737_00_0', 'scene0738_00_0'],
+        'scene0724_00_0', 'scene0734_00_0',
+        'scene0737_00_0', 'scene0738_00_0',
+        'scene0746_00_0', 'scene0752_00_0',
+        'scene0753_00_0', 'scene0773_00_0',
     ];
 
     let container = document.getElementById("meshContainer");
-    meshRows.forEach((meshIds) => {
+    meshRows.forEach((meshId) => {
         let row = document.createElement("DIV");
-        row.classList = "row";
+        row.classList = "row captioned_videos meshes";
 
-        meshIds.forEach((meshId) => {
-            let col = document.createElement("DIV");
-            col.classList = "col-md-6 col-sm-6 my-auto";
-            
-            // Model viewer.
-            let model = document.createElement("model-viewer");
-            for (const attr in sharedAttributes) {
-                if (attr != "caption" && attr != "shortCaption")
-                    model.setAttribute(attr, sharedAttributes[attr]);
-            }
-            for (const attrCustom in meshAttributes[meshId]) {
-                if (attrCustom != "caption" && attrCustom != "shortCaption")
-                    model.setAttribute(attrCustom, meshAttributes[meshId][attrCustom]);
-            }
-            model.id = 'mesh-' + meshId;
+        let text_div1 = document.createElement("DIV");
+        text_div1.classList = "col-4";
+        let text1 = document.createElement("P");
+        text1.classList = "text-center";
+        text1.textContent = 'Mesh w/o texture'
+        text_div1.appendChild(text1);
+        row.appendChild(text_div1);
 
-            // Controls.
-            let controls = document.createElement("div");
-            controls.className = "controls";
-            let buttonLoad = document.createElement("button");
-            buttonLoad.classList = "btn btn-primary loads-model";
-            buttonLoad.setAttribute("data-controls", model.id);
-            buttonLoad.appendChild(document.createTextNode("Load 3D model"));
-            // let buttonToggle = document.createElement("button");
-            // buttonToggle.classList = "btn btn-primary toggles-texture";
-            // buttonToggle.setAttribute("data-controls", model.id);
-            // buttonToggle.appendChild(document.createTextNode("Toggle texture"));
-            controls.appendChild(buttonLoad);
-            // controls.appendChild(buttonToggle);
+        let text_div2 = document.createElement("DIV");
+        text_div2.classList = "col-4";
+        let text2 = document.createElement("P");
+        text2.classList = "text-center";
+        text2.textContent = 'Input depth | Pred texture'
+        text_div2.appendChild(text2);
+        row.appendChild(text_div2);
 
-            // Caption.
-            let caption = document.createElement("p");
-            caption.classList = "caption";
-            caption.title = meshAttributes[meshId]["caption"] || "";
-            caption.appendChild(document.createTextNode(meshAttributes[meshId]["shortCaption"] || caption.title));
+        let button_div = document.createElement("DIV");
+        button_div.classList = "col-4 controls";
+        let button = document.createElement("button");
+        button.classList = "btn btn-primary loads-model";
+        button.setAttribute("data-controls", 'mesh-' + meshId);
+        button.setAttribute("data-action", "load");
+        button.appendChild(document.createTextNode("Load 3D model"));
+        button_div.appendChild(button);
+        row.appendChild(button_div);
 
-            col.appendChild(model);
-            col.appendChild(controls);
-            col.appendChild(caption);
-            row.appendChild(col);
-        });
+        let mesh_no_texture_img_div = document.createElement("DIV");
+        mesh_no_texture_img_div.classList = "col-4";
+        let mesh_no_texture_img = document.createElement("img");
+        mesh_no_texture_img.src = "/assets/meshes2/" + meshId + "_non_texture.png";
+        mesh_no_texture_img.style = "width: 100%;";
+        mesh_no_texture_img.alt = "";
+        mesh_no_texture_img_div.appendChild(mesh_no_texture_img);
+        row.appendChild(mesh_no_texture_img_div);
+
+        let video_div = document.createElement("DIV");
+        video_div.classList = "col-4";
+        let video_container = document.createElement("DIV");
+        video_container.classList = "video-compare-container";
+        video_container.style = "width: 100%;";
+        let video = document.createElement("video");
+        video.classList = "video lazy";
+        video.style = "height: 0px;";
+        video.setAttribute("data-src", "https://www.sfu.ca/~fuyangz/mvdiffusion/depth_video/" + meshId + ".mp4");
+        video.id = meshId + "_video";
+        video.loop = true;
+        video.muted = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        //video.onplay = function() {};
+        video_container.appendChild(video);
+        video_div.appendChild(video_container);
+        row.appendChild(video_div);
+
+        let mode_view_div = document.createElement("DIV");
+        mode_view_div.classList = "col-md-4 col-sm-4 my-auto";
+        // Model viewer.
+        let model = document.createElement("model-viewer");
+        for (const attr in sharedAttributes) {
+            if (attr != "caption" && attr != "shortCaption")
+                model.setAttribute(attr, sharedAttributes[attr]);
+        }
+        for (const attrCustom in meshAttributes[meshId]) {
+            if (attrCustom != "caption" && attrCustom != "shortCaption")
+                model.setAttribute(attrCustom, meshAttributes[meshId][attrCustom]);
+        }
+        model.id = 'mesh-' + meshId;
+        mode_view_div.appendChild(model);
+        row.appendChild(mode_view_div);
+
+        // Caption.
+        let caption = document.createElement("p");
+        caption.classList = "caption";
+        caption.title = meshAttributes[meshId]["caption"] || "";
+        caption.appendChild(document.createTextNode(meshAttributes[meshId]["shortCaption"] || caption.title));
 
         container.appendChild(row);
     });
