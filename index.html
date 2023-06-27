@@ -37,6 +37,20 @@
 
     <script src="assets/js/video_comparison.js"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+
+    <style>
+    .expandable-content {
+      display: none;
+    }
+    .expanded {
+      display: block;
+    }
+    .expand-link {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+    </style>
 </head>
 
 <body>
@@ -72,7 +86,7 @@
             </div>
         </div>
         <div class="buttons" style="margin-bottom: 8px;">
-            <a class="btn btn-light" role="button" href="https://arxiv.org/abs/2209.14988">
+            <a class="btn btn-light" role="button" href="https://mvdiffusion.github.io/">
                 <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
                 </svg>Paper
@@ -83,20 +97,66 @@
                 </svg>
                 Project
             </a>
-            <a class="btn btn-light" role="button" href="/gallery.html">
+            <a class="btn btn-light" role="button" href="https://github.com/Tangshitao/MVDiffusion">
+                <svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 
+                            1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 
+                            3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 
+                            2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                Code
+            </a>
+            <a class="btn btn-light" role="button" href="gallery.html">
                 <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
                     <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "/>
                 </svg>
                 Gallery
             </a>
-            <a class="btn btn-light" role="button" href="https://mvdiffusion.github.io/">
+            <a class="btn btn-light" role="button" href="https://huggingface.co/spaces/tangshitao/MVDiffusion">
                 <img style="width:24px;height:24px;margin-left:-1px;margin-right:8px" width="24px" height="24px" viewBox="0 0 375 531" src="hf-logo.svg" alt="Hugging Face Logo">
                 Demo
             </a>
         </div>
     </div>
     <hr class="divider" />
+	<div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2><strong>Abstract</strong></h2>
+                <p>
+                    This paper introduces <em>MVDiffusion</em>, a simple yet effective multi-view image generation method for scenarios where pixel-to-pixel 
+                    correspondences are available, such as perspective crops from panorama or multi-view images given geometry (depth maps and poses). 
+                    <span id="expand_button" class="expand-link" onclick="expand('expand_button', 'long-abs', 'collapse_button')">[Expand]</span>
+                    <span id="long-abs" class="expandable-content">
+                        Unlike prior models that rely on iterative image warping and inpainting, MVDiffusion concurrently generates all images with a global awareness, encompassing high resolution and rich content, effectively addressing the error accumulation prevalent in preceding models. MVDiffusion specifically incorporates a correspondence-aware attention mechanism, enabling effective cross-view interaction. This mechanism underpins three pivotal modules: 1) a generation module that produces low-resolution images while maintaining global correspondence, 2) an interpolation module that densifies spatial coverage between images, and 3) a super-resolution module that upscales into high-resolution outputs. In terms of panoramic imagery, MVDiffusion can generate high-resolution photorealistic images up to 1024x1024 pixels. For geometry-conditioned multi-view image generation, MVDiffusion demonstrates the first method capable of generating a textured map of a scene mesh.
+                    </span>
+                    <p id="collapse_button" class="expand-link" style="display: none;" onclick="collapse('expand_button', 'long-abs', 'collapse_button')">[Collapse]</p>
+                </p>
+            </div>
+            <script>
+                function expand(exp_buttonId, longId, col_buttonID) {
+                  var expElement = document.getElementById(exp_buttonId);
+                  var longElement = document.getElementById(longId);
+                  var colElement = document.getElementById(col_buttonID);
+                  expElement.style.display = 'none';
+                  longElement.style.display = 'inline';
+                  colElement.style.display = 'block';
+                }
+
+                function collapse(exp_buttonId, longId, col_buttonID) {
+                  var expElement = document.getElementById(exp_buttonId);
+                  var longElement = document.getElementById(longId);
+                  var colElement = document.getElementById(col_buttonID);
+                  expElement.style.display = 'inline';
+                  longElement.style.display = 'none';
+                  colElement.style.display = 'none';
+                }
+            </script>
+        </div>
+    </div>
+	<!-- <hr class="divider" /> -->
     <div class="container" style="max-width: 768px;">
+        <h4>Applications: Panorama Generation / Mesh Texture Generation</h4>
         <div class="row captioned_videos">
             <div class="col-md-12">
                 <img src="assets/images/teaser.png" alt="Image Description" style="width:100%">
@@ -370,17 +430,6 @@
     </div>
 
     <hr class="divider" />
-	<div class="container" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2><strong>Abstract</strong></h2>
-                <p>
-                    This paper introduces <em>MVDiffusion</em>, a simple yet effective multi-view image generation method for scenarios where pixel-to-pixel correspondences are available, such as perspective crops from panorama or multi-view images given depth/pose. Unlike prior models that rely on iterative image warping and inpainting, MVDiffusion concurrently generates all images with a global awareness, encompassing high resolution and rich content, effectively addressing the error accumulation prevalent in preceding models. MVDiffusion specifically incorporates a correspondence-aware attention mechanism, enabling effective cross-view interaction. This mechanism underpins three pivotal modules: 1) a generation module that produces low-resolution images while maintaining global correspondence, 2) an interpolation module that densifies spatial coverage between images, and 3) a super-resolution module that upscales into high-resolution outputs. Through comprehensive experimentation, MVDiffusion consistently outperforms state-of-the-art models across various metrics, marking a significant advancement in the field of multi-view image synthesis.
-                </p>
-            </div>
-        </div>
-    </div>
-	<hr class="divider" />
     <div class="container" style="max-width: 768px;">
         <div class="row">
             <div class="col-md-12">
