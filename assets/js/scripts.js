@@ -45,8 +45,8 @@
     let meshRows = [
         'scene0724_00_0', 'scene0734_00_0',
         'scene0737_00_0', 'scene0738_00_0',
-        'scene0746_00_0', 'scene0752_00_0',
-        'scene0753_00_0', 'scene0773_00_0',
+        //'scene0746_00_0', 'scene0752_00_0',
+        //'scene0753_00_0', 'scene0773_00_0',
     ];
 
     let container = document.getElementById("meshContainer");
