@@ -112,7 +112,7 @@
         canvas.classList = "videoMerge";
         canvas.height = 752;
         canvas.width = 1002;
-        canvas.id = meshId + "_canvas";
+        canvas.id = video.id + "Merge";
         video_container.appendChild(canvas);
 
         video_div.appendChild(video_container);
