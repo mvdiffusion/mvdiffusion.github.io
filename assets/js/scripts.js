@@ -97,13 +97,16 @@
         let video = document.createElement("video");
         video.classList = "video lazy";
         video.style = "height: 0px;";
-        video.setAttribute("data-src", "https://www.sfu.ca/~fuyangz/mvdiffusion/depth_video/" + meshId + ".mp4");
         video.id = meshId + "_video";
         video.loop = true;
         video.muted = true;
         video.autoplay = true;
         video.playsInline = true;
         //video.onplay = function() {};
+        let source = document.createElement("source");
+        source.setAttribute("https://www.sfu.ca/~fuyangz/mvdiffusion/depth_video/" + meshId + ".mp4");
+        source.setAttribute("type", "video/mp4");
+        video.appendChild(source);
         video_container.appendChild(video);
         video_div.appendChild(video_container);
         row.appendChild(video_div);
