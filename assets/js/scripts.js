@@ -102,7 +102,7 @@
         video.muted = true;
         video.autoplay = true;
         video.playsInline = true;
-        //video.onplay = function() {};
+        video.onplay = "resizeAndPlay(this)";
         let source = document.createElement("source");
         source.setAttribute("data-src", "https://www.sfu.ca/~fuyangz/mvdiffusion/depth_video/" + meshId + ".mp4");
         source.setAttribute("type", "video/mp4");
