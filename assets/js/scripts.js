@@ -40,12 +40,36 @@
             caption: "",
             shortCaption: "",
         },
+        scene0746_00_0: {
+            src: "https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0746_00_0.glb",
+            poster: "/assets/meshes2/scene0746_00_0.png",
+            caption: "",
+            shortCaption: "",
+        },
+        scene0752_00_0: {
+            src: "https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0752_00_0.glb",
+            poster: "/assets/meshes2/scene0752_00_0.png",
+            caption: "",
+            shortCaption: "",
+        },
+        scene0753_00_0: {
+            src: "https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0753_00_0.glb",
+            poster: "/assets/meshes2/scene0753_00_0.png",
+            caption: "",
+            shortCaption: "",
+        },
+        scene0773_00_0: {
+            src: "https://www.sfu.ca/~fuyangz/mvdiffusion/mesh/scene0773_00_0.glb",
+            poster: "/assets/meshes2/scene0773_00_0.png",
+            caption: "",
+            shortCaption: "",
+        },
     };
 
     let meshRows = [
         'scene0724_00_0', 'scene0734_00_0',
-        'scene0746_00_0', 'scene0752_00_0',
         'scene0737_00_0', 'scene0738_00_0',
+        'scene0746_00_0', 'scene0752_00_0',
         'scene0753_00_0', 'scene0773_00_0',
     ];
 
