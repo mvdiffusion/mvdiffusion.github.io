@@ -44,8 +44,8 @@
 
     let meshRows = [
         'scene0724_00_0', 'scene0734_00_0',
-        'scene0737_00_0', 'scene0738_00_0',
         'scene0746_00_0', 'scene0752_00_0',
+        'scene0737_00_0', 'scene0738_00_0',
         'scene0753_00_0', 'scene0773_00_0',
     ];
 
@@ -135,10 +135,10 @@
         row.appendChild(mode_view_div);
 
         // Caption.
-        let caption = document.createElement("p");
-        caption.classList = "caption";
-        caption.title = meshAttributes[meshId]["caption"] || "";
-        caption.appendChild(document.createTextNode(meshAttributes[meshId]["shortCaption"] || caption.title));
+        //let caption = document.createElement("p");
+        //caption.classList = "caption";
+        //caption.title = meshAttributes[meshId]["caption"] || "";
+        //caption.appendChild(document.createTextNode(meshAttributes[meshId]["shortCaption"] || caption.title));
 
         container.appendChild(row);
     });
