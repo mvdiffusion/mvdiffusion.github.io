@@ -123,11 +123,11 @@
             <div class="col-md-12">
                 <h2>Abstract</h2>
                 <p>
-                    This paper introduces <em>MVDiffusion</em>, a simple yet effective multi-view image generation method for scenarios where pixel-to-pixel 
-                    correspondences are available, such as perspective crops from panorama or multi-view images given geometry (depth maps and poses). 
+                    This paper introduces <em>MVDiffusion</em>, a simple yet effective method for generating
+                    consistent multi-view images from text prompts given pixel-to-pixel correspondences (e.g., perspective crops from a panorama or multi-view images given depth maps and poses). 
                     <span id="expand_button" class="expand-link" onclick="expand('expand_button', 'long-abs', 'collapse_button')">[Expand]</span>
                     <span id="long-abs" class="expandable-content">
-                        Unlike prior models that rely on iterative image warping and inpainting, MVDiffusion concurrently generates all images with a global awareness, encompassing high resolution and rich content, effectively addressing the error accumulation prevalent in preceding models. MVDiffusion specifically incorporates a correspondence-aware attention mechanism, enabling effective cross-view interaction. This mechanism underpins three pivotal modules: 1) a generation module that produces low-resolution images while maintaining global correspondence, 2) an interpolation module that densifies spatial coverage between images, and 3) a super-resolution module that upscales into high-resolution outputs. In terms of panoramic imagery, MVDiffusion can generate high-resolution photorealistic images up to 1024x1024 pixels. For geometry-conditioned multi-view image generation, MVDiffusion demonstrates the first method capable of generating a textured map of a scene mesh.
+                        Unlike prior methods that rely on iterative image warping and inpainting, MVDiffusion simultaneously generates all images with a global awareness, effectively addressing the prevalent error accumulation issue. At its core, MVDiffusion processes perspective images in parallel with a pre-trained text-toimage diffusion model, while integrating novel correspondence-aware attention layers to facilitate cross-view interactions. For panorama generation, while only trained with 10k panoramas, MVDiffusion is able to generate high-resolution photorealistic images for arbitrary texts or extrapolate one perspective image to a 360-degree view. For multi-view depth-to-image generation, MVDiffusion demonstrates state-of-the-art performance for texturing a scene mesh.
                     </span>
                     <p id="collapse_button" class="expand-link" style="display: none;" onclick="collapse('expand_button', 'long-abs', 'collapse_button')">[Collapse]</p>
                 </p>
